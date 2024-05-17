@@ -1,0 +1,19 @@
+.navbar li, a {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    margin-left: 5vw;
+}
+
+.navbar {
+    display: flex;
+   
+    
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+}
