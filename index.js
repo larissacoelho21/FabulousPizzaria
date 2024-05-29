@@ -9,7 +9,7 @@ const app = express();
 app.use(express.static("public"))
 
 //configuração do middleware para verificar solicitações com o tipo de conteudo do corpo
-app.use(
+app.use(    
     express.urlencoded ({
         extended: true
     })
@@ -23,10 +23,17 @@ app.use(express.json());
 app.engine('handlebars', exhbs.engine());
 app.set('view engine', 'handlebars');
 
+
 //primeira rota
 app.get('/', (req,res) => {
     //res.send('mandando informações na tela')
     res.render("home")
+})
+
+//segunda rota
+app.get('/menu', (req,res) => {
+    //res.send('mandando informações na tela')
+    res.render("menu")
 })
 
 //conexao com banco de dados

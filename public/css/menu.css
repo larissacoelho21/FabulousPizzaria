@@ -1,0 +1,84 @@
+/* editando o header do menu */
+.header-menu {
+    background-image: url("/img/fundo-menu.svg");
+    background-repeat: no-repeat no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 45.5vw;
+    margin-bottom: 10vw;
+}
+
+/* navbar */
+.navbar-menu ul {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.navbar-menu ul li, a {
+    position: relative;
+    margin-left: 2vw;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: "Yantramanav", sans-serif;
+    font-size: 1.6vw;
+    font-weight: bold;
+    list-style-type: none;
+    cursor: pointer;
+    transition: color .3s;
+    margin-top: 6vw;
+}
+
+.navbar-menu a:hover{
+    color: rgba(215, 207, 207, 0.872);
+}
+
+.navbar-menu ul li a:after {
+    background-color: #CE2B37;
+    bottom: 0;
+    content: "";
+    height: 3px;
+    position: absolute;
+    transition: width .3s, left .3s;
+    width: 0;
+    left: 50%;
+}
+
+.navbar-menu li a:hover:after {
+    left: 0;
+    width: 100%;
+}
+
+.navbar-menu li.active, a:after {
+    left: 2vw;
+    width: 100%;
+}
+
+.navbar-menu a.active  {
+    color: #CE2B37;
+}
+/* desde 1987 */
+
+.data-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vw;
+}
+
+.data-menu p {
+    color: #FFFFFF;
+    font-size: 1.5vw;
+    font-family: "Yantramanav", sans-serif;
+    font-weight: bold;
+}
+
+.starcolor-date{
+    width: 1.5vw;
+    margin-right: 0.5vw;
+}
+
+.starcolor-datedir{
+    width: 1.5vw;   
+    margin-left: 0.5vw;
+}
