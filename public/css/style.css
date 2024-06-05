@@ -76,55 +76,6 @@ body {
     opacity: 0.5;
 }
 
-/* Estilizando a NavBar */
-.navbar ul {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    margin-top: 2.5vw;
-}
-
-.navbar ul li a {
-    position: relative;
-    margin-left: 4vw;
-    color: #FFFFFF;
-    text-decoration: none;
-    font-family: "Yantramanav", sans-serif;
-    font-size: 1.6vw;
-    font-weight: bold;
-    list-style-type: none;
-    cursor: pointer;
-    transition: color .3s;
-}
-
-.navbar a:hover{
-    color: rgba(215, 207, 207, 0.872);
-} 
-
-.navbar ul li a:after {
-    background-color: #CE2B37;
-    bottom: 0;
-    content: "";
-    height: 3px;
-    position: absolute;
-    transition: width .3s, left .3s;
-    width: 0;
-    left: 50%;
-}
-
-.navbar ul li a:hover:after {
-    left: 0;
-    width: 100%;
-}
-
-.navbar li.active, a:after {
-    left: 2vw;
-    width: 100%;
-}
-.navbar a.active  {
-    color: #CE2B37;
-}
-
 /* Estilizando "logo" */
 .name img{
     max-width: 100%;
@@ -508,3 +459,43 @@ body {
     border-color: rgba(255, 255, 255, 0.336);
 }
 
+/* footer */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vw;
+    background-color: #232323;
+}
+
+.footer-img {
+    margin-top: 2vw;
+}
+
+.footer-img img {
+    width: 12vw;
+}
+
+.redes-sociais {
+    margin-top: 2vw;
+}
+
+.redes-sociais img {
+    margin-left: 2vw;
+    width: 1.8vw;
+    cursor: pointer;
+}
+
+.legal p {
+    font-family: "Yantramanav", sans-serif;
+    color: #FFFFFF;
+    font-size: 1.5vw;
+    opacity: 60%;
+}
+
+.legal {
+    margin-left: 5vw;
+    margin-top: 2vw;
+}
