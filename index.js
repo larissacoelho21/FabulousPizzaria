@@ -41,6 +41,11 @@ app.get('/pedidos', (req,res) => {
     res.render("pedidos")
 })
 
+app.get('/adicionar', (req,res) => {
+    //res.send('mandando informações na tela')
+    res.render("adicionarPedido")
+})
+
 //conexao com banco de dados
 const conn = mysql2.createConnection({
     host:'localhost',

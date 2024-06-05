@@ -1,0 +1,74 @@
+<div class="container">
+    <h2>Adicionar pedido</h2>
+
+    <p>Escolha sua pizza, com base no nosso cardapio</p>
+
+    <form action="/pedidos/adicionarpedidos">
+
+        <input id="codigoPizza" placeholder="Digite o codigo" />
+
+
+        <div class="clientName">
+            <label for="client">Nome de quem vai receber a pizza:</label>
+            <input type="text" id="client" name="nomecliente" required>
+        </div>
+
+        <div class="telephone">
+            <label for="tell">Telefone/celular:</label>
+            <input type="text" id="tell" name="telefone" required>
+        </div>
+
+        <div class="selectpizza">
+            <label for="select">Escolha o sabor da pizza:</label>
+            {{!-- <input type="text" name="pizza" id="pizza" list="opt-menu" required> --}}
+            <select id="pizza" name="pizza">
+                <option value="">Selecione uma pizza</option>
+            </select>
+        </div>
+
+        <div class="valorPizza">
+            <input type="text" disabled placeholder="Valor da pizza cara" id="valorPizza"> 
+        </div>
+
+        <div class="formPayment">
+            <label for="payment">Forma de pagamento:</label>
+            <input type="text" id="payment" name="pagamento" list="opt-payment" required>
+            <datalist id="opt-payment">
+                <option value="Crédito"></option>
+                <option value="Débito"></option>
+                <option value="Pix"></option>
+                <option value="Dinheiro"></option>
+            </datalist>
+        </div>
+
+        <div class="addressDelivery">
+            <label for="adress">Endereço:</label>
+            <input type="text" id="road" name="rua" required>
+            <input type="text" id="city" name="cidade" required>
+            <input type="text" id="number" name="numerocasa" required>
+        </div>
+
+        <input type="submit" value="Submit" />
+    </form>
+</div>
+
+<script>
+    const pizzas = [{ "id": 1, "sabor": "portuguesa", "valor": "R$ 390,00" }, { "id": 2, "sabor": "frango com catupiry", "valor": "R$ 230,00" }]
+    // oiiiii
+    document.addEventListener('DOMContentLoaded', function () {
+        pizzas.forEach((pizza) => {
+            const option = document.createElement("option");
+            const dad_ = document.getElementById("pizza");
+
+            option.textContent = pizza.sabor;
+            option.value = pizza.id;
+
+            dad_.appendChild(option);
+        });
+        document.getElementById("pizza").addEventListener("change", function () {
+            const pizzaSelecionadaId = document.getElementById("pizza");
+            const pizza = pizzas.filter((pizza) => pizzaSelecionadaId.value == pizza.id);
+            document.getElementById("valorPizza").value = pizza[0].valor;
+        });
+    });
+</script>
