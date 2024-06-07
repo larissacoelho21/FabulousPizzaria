@@ -1,38 +1,125 @@
 <div class="container" style="color: white;">
 
-     <header>
+  <header>
 
-        <div class="cabecalho">{{!-- div header --}}
+    <div class="cabecalho">{{! div header }}
 
-            <div class="navbar">
-                <ul>
-                    <li><a id="inicio" href="/">INÍCIO</a></li>
-                    <li><a id="menu" href="/menu">MENU</a></li>
-                    <li><a id="sobre" href="/">SOBRE</a></li>
-                    <li><a id="pedidos" href="/pedidos">PEDIDOS</a></li>
-                </ul>
+      <div class="navbar">
+        <ul>
+          <li><a id="inicio" href="/">INÍCIO</a></li>
+          <li><a id="menu" href="/menu">MENU</a></li>
+          <li><a id="pedidos" href="/pedidos">PEDIDOS</a></li>
+        </ul>
 
-            </div>
+      </div>
 
-            <div class="paragrafo">
-                <p>Navegue pelo nosso catálogo, selecione seus itens preferidos e <br> finalize seu pedido
-                 em poucos passos. Sua satisfação é nossa<br> prioridade, e estamos aqui para garantir que 
-                 sua experiência de <br> compra seja a melhor possível.</p>
-            </div>
+      <div class="name">
+        <img src="/img/title.svg" alt="" />
+      </div>
 
-            <div class="button">
-                <a href="/menu">CONFIRA NOSSO MENU</a>
-            </div>
+      <div class="start">
+        <h1>Faça seus <br /> pedidos </h1>
 
-        </div> {{!-- fechando div header --}}
+        <p>Finalize seu<span style="color: #CE2B37;"> pedido </span>
+          em
+          <span style="color: #009246;">poucos</span>
+          passos</p>
 
-    </header>
+      </div>
 
-    <h1>Pedidos</h1>
+      <div class="button">
+        <a href="/menu">CONFIRA NOSSO MENU</a>
+      </div>
 
-   <h2>Faça seu pedido!</h2>
+    </div>
+    {{! fechando div header }}
 
-   <a href="/adicionar">adicionar novo pedido</a>
+  </header>
 
+  <section class="pedidos">
+
+    <div class="titulo-menu">
+      <img
+        style="margin-right: 1.5vw;"
+        class="starcolor-date"
+        src="/img/icon/redStar.svg"
+        alt=""
+      />
+
+      <h1>Meus Pedidos</h1>
+
+      <img
+        style="margin-left: 1.5vw;"
+        class="starcolor-date"
+        src="/img/icon/redStar.svg"
+        alt=""
+      />
+    </div>
+
+    <div class="button">
+      <a href="/adicionar">ADICIONAR PEDIDO</a>
+    </div>
+  </section>
+
+  <section class="pedidos-tabela">
+
+    <tr class="title-tabela">
+      <li>Pedido</li>
+      <li>Sabor da Pizza</li>
+      <li>Informações</li>
+    </tr>
+
+    {{#each lista}}
+      <tr class="info-tabela">
+        <td>{{this.PedidoId}}</td>
+        <td>{{this.sabor}}</td>
+        <td>{{this.nomecliente}}</td>
+        <td class="button">
+          <a style="padding: 1vw 4vw 1vw ; !important"
+            href="/lista/{{this.PedidoId}}"
+            > Detalhes</a>
+        </td>
+        <form action="/pedidos/remove/{{this.PedidoId}}" method="post">
+          <input type="submit" value="Remover"/>
+        </form>
+      </tr>
+
+    {{/each}}
+
+  </section>
+
+  <footer>
+    <div class="footer">
+      <div class="footer-img">
+        <img src="/img/title.svg" alt="" />
+      </div>
+
+      <div class="navbar" style="margin-top: -3vw;">
+        <ul>
+          <li><a id="inicio" href="/">INÍCIO</a></li>
+          <li><a id="menu" href="/menu">MENU</a></li>
+          <li><a id="pedidos" href="/pedidos">PEDIDOS</a></li>
+        </ul>
+      </div>
+
+      <div class="redes-sociais">
+        <img src="/img/whatsapp.svg" alt="" />
+        <img src="/img/instagram.svg" alt="" />
+        <img src="/img/facebook.svg" alt="" />
+        <img src="/img/twitter.svg" alt="" />
+      </div>
+
+      <div class="legal">
+        <p>© 2024 Fabulous Pizzaria. Todos os direitos reservados.</p>
+      </div>
+
+    </div>
+  </footer>
 
 </div>
+
+<script>
+  console.log() const path = window.location.pathname; if (path === '/pedidos')
+  { document.getElementById("pedidos").className = "active"; }
+
+</script>

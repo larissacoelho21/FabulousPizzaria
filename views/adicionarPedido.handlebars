@@ -1,74 +1,142 @@
-<div class="container">
-    <h2>Adicionar pedido</h2>
+<section class="adicionarPedido">
 
-    <p>Escolha sua pizza, com base no nosso cardapio</p>
+  <div class="titulo-menu" style="margin-top: 3vw;">
+      <img
+        style="margin-right: 1.5vw;"
+        class="starcolor-date"
+        src="/img/icon/redStar.svg"
+        alt=""
+      />
 
-    <form action="/pedidos/adicionarpedidos">
+      <h1>Adicionar Pedidos</h1>
 
-        <input id="codigoPizza" placeholder="Digite o codigo" />
+      <img
+        style="margin-left: 1.5vw;"
+        class="starcolor-date"
+        src="/img/icon/redStar.svg"
+        alt=""
+      />
+    </div>
 
+  <div class="parag">
+    <p>Faça seu pedido e aproveite nossas deliciosas pizzas!</p>
+  </div>
 
-        <div class="clientName">
-            <label for="client">Nome de quem vai receber a pizza:</label>
-            <input type="text" id="client" name="nomecliente" required>
+  <div class="formulario">
+    <form action="/pedidos/adicionarpedidos" method="post">
+    <div class="partUm">
+        <div class="escolhaSabor">
+          <label for="select"><span style="color: #CE2B37;  margin-right: 0.5vw;">*</span> Escolha o sabor:</label>
+            <input type="text" name="sabor" id="sabor" list="sabores" placeholder="Informe o sabor da sua pizza" required>
+                <datalist id="sabores">
+                    <option value="Margherita"></option>
+                    <option value="Capricciosa"></option>
+                    <option value="Diavola"></option>
+                    <option value="Quattro Formaggi"></option>
+                    <option value="Portuguesa"></option>
+                    <option value="Pepperoni"></option>
+                    <option value="Palmito"></option>
+                    <option value="Frango com catupiry"></option>
+                    <option value="Romeu e Julieta"></option>
+                    <option value="Sensação"></option>
+                    <option value="Banoffe"></option>
+                </datalist>
         </div>
+        
+      <div class="clientName">
+        <label for="client"><span style="color: #CE2B37;  margin-right: 0.5vw;">*</span> Nome completo:</label>
+        <input
+          type="text"
+          id="client"
+          name="nomecliente"
+          required
+          autocomplete="off"
+          placeholder="Digite o seu nome, ou da pessoa que irá receber"
+        />
+      </div>
 
-        <div class="telephone">
-            <label for="tell">Telefone/celular:</label>
-            <input type="text" id="tell" name="telefone" required>
-        </div>
+      <div class="telephone">
+        <label for="tell"><span style="color: #CE2B37;  margin-right: 0.5vw;">*</span> Telefone/Celular:</label>
+        <input
+          type="number"
+          id="tell"
+          name="telefone"
+          required
+          autocomplete="off"
+          maxlength="11"
+          minlength="11"
+          placeholder="(00) 0000-000"
+        />
+      </div>
+      </div>
+      
+      <div class="addressDelivery">
+        <p><span style="color: #CE2B37; margin-right: 0.5vw;">*</span> Endereço:</p>
+        <label for="adress">Nome da rua:</label>
+        <input
+          type="text"
+          id="road"
+          name="rua"
+          required
+          autocomplete="off"
+          placeholder="Informe o nome da sua rua"
+        />
+        <div class="localizacao">
+        <label for="adress">Nome do bairro:</label>
+        <input
+          type="text"
+          id="neighborhood"
+          name="bairro"
+          required
+          autocomplete="off"
+          placeholder="Informe o nome do seu bairro"
+        />
+        <label for="adress" id="numCasa">Número da casa:</label>
+        <input
+          type="number"
+          id="number"
+          name="numerocasa"
+          required
+          autocomplete="off"
+          placeholder="000"
+          oninput="if(this.value.length > 4) this.value = this.value.slice(0, 4);" 
+        />
+      </div>
+      </div>
 
-        <div class="selectpizza">
-            <label for="select">Escolha o sabor da pizza:</label>
-            {{!-- <input type="text" name="pizza" id="pizza" list="opt-menu" required> --}}
-            <select id="pizza" name="pizza">
-                <option value="">Selecione uma pizza</option>
-            </select>
-        </div>
+      <div class="formPayment">
+        <label for="payment"><span style="color: #CE2B37;  margin-right: 0.5vw;">*</span> Forma de pagamento:</label>
+        <input
+          type="text"
+          id="payment"
+          name="pagamento"
+          list="opt-payment"
+          placeholder="Selecione sua forma de pagamento"
+          required
+        />
+        <datalist id="opt-payment">
+          <option value="Crédito"></option>
+          <option value="Débito"></option>
+          <option value="Pix"></option>
+          <option value="Dinheiro"></option>
+        </datalist>
+      </div>
 
-        <div class="valorPizza">
-            <input type="text" disabled placeholder="Valor da pizza cara" id="valorPizza"> 
-        </div>
-
-        <div class="formPayment">
-            <label for="payment">Forma de pagamento:</label>
-            <input type="text" id="payment" name="pagamento" list="opt-payment" required>
-            <datalist id="opt-payment">
-                <option value="Crédito"></option>
-                <option value="Débito"></option>
-                <option value="Pix"></option>
-                <option value="Dinheiro"></option>
-            </datalist>
-        </div>
-
-        <div class="addressDelivery">
-            <label for="adress">Endereço:</label>
-            <input type="text" id="road" name="rua" required>
-            <input type="text" id="city" name="cidade" required>
-            <input type="text" id="number" name="numerocasa" required>
-        </div>
-
-        <input type="submit" value="Submit" />
+      <div class="observation">
+        <label for="obs">Observação:</label>
+        <input
+          type="text"
+          id="text"
+          name="obs"
+          autocomplete="off"
+          placeholder="Em caso de alterações ou recados deixe sua observação"
+        />
+      </div>
+      
+      <div class="botao">
+      <button>Confirmar pedido</button>
+      </div>
     </form>
-</div>
+  </div>
 
-<script>
-    const pizzas = [{ "id": 1, "sabor": "portuguesa", "valor": "R$ 390,00" }, { "id": 2, "sabor": "frango com catupiry", "valor": "R$ 230,00" }]
-    // oiiiii
-    document.addEventListener('DOMContentLoaded', function () {
-        pizzas.forEach((pizza) => {
-            const option = document.createElement("option");
-            const dad_ = document.getElementById("pizza");
-
-            option.textContent = pizza.sabor;
-            option.value = pizza.id;
-
-            dad_.appendChild(option);
-        });
-        document.getElementById("pizza").addEventListener("change", function () {
-            const pizzaSelecionadaId = document.getElementById("pizza");
-            const pizza = pizzas.filter((pizza) => pizzaSelecionadaId.value == pizza.id);
-            document.getElementById("valorPizza").value = pizza[0].valor;
-        });
-    });
-</script>
+</section>

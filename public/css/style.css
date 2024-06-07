@@ -284,26 +284,6 @@ body {
     padding-bottom: 2vw;
 }
 
-/* Estilizando o sobre nos */
-
-.sobre{
-    width: 100%;
-    height: 100%;
-}
-
-.textsobre{
-    color: white;
-    text-align: center;
-    
-    margin-left: 40%;
-}
-
-.textsobre p{
-
-    width: 50%;
-}
-
-
 /* Estilizando Banner */
 
 .banner {

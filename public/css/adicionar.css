@@ -1,0 +1,143 @@
+.adicionarPedido {
+  color: #FFFFFF;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input{
+  padding: 10px;
+  color: #FFFFFF;
+}
+
+input:focus{
+  outline: none;
+}
+
+.adicionarPedido {
+  font-family: "Yantramanav", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 5vw;
+}
+
+
+.parag {
+  margin-bottom: 3vw;
+  margin-top: 2vw;
+}
+
+.parag p {
+  font-size: 1.5vw;
+}
+
+.formulario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+  font-family: "Yantramanav", sans-serif;
+}
+
+.formulario form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.formulario form>div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.escolhaSabor label {
+  margin-bottom: 0.5vw;
+}
+
+.clientName label {
+  margin-bottom: 0.5vw;
+}
+
+.telephone label {
+  margin-bottom: 0.5vw;
+}
+
+.clientName,
+.telephone,
+.escolhaSabor {
+  margin-bottom: 4vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.addressDelivery p {
+  font-size: 1.5vw;
+  font-weight: 600;
+  margin-bottom: 2vw;
+}
+
+.addressDelivery label {
+  margin-bottom: 0.5vw;
+}
+
+.formPayment label {
+  margin-bottom: 0.5vw;
+}
+
+.observation label {
+  margin-bottom: 0.5vw;
+}
+
+.formPayment {
+  margin-bottom: 4vw;
+}
+
+.localizacao {
+  margin-top: 3vw;
+  margin-bottom: 2vw;
+}
+
+#numCasa {
+  margin-left: 20vw;
+}
+
+.formulario input {
+  background-color: #282828;
+  border-color: #FFFFFF;
+  border-width: 0.1vw;
+  height: 3.5vw;
+  border-radius: 0.3vw;
+}
+
+.localizacao input {
+  width: 20vw;
+}
+
+.botao button {
+  width: 20vw;
+  height: 3.5vw;
+  margin-top: 5vw;
+  margin-bottom: 3vw;
+  align-items: center;
+  border-radius: 0.3vw;
+  background-color: #282828;
+  border-color: #FFFFFF;
+  border-width: 0.1vw;
+  color: #FFFFFF;
+}
+
+.botao {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
