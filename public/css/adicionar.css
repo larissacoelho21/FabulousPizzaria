@@ -18,6 +18,9 @@ input:focus{
   outline: none;
 }
 
+form label {
+  font-size: 1.3vw;
+}
 .adicionarPedido {
   font-family: "Yantramanav", sans-serif;
   display: flex;
@@ -30,7 +33,7 @@ input:focus{
 
 
 .parag {
-  margin-bottom: 3vw;
+  margin-bottom: 5vw;
   margin-top: 2vw;
 }
 
@@ -81,7 +84,7 @@ input:focus{
 }
 
 .addressDelivery p {
-  font-size: 1.5vw;
+  font-size: 1.8vw;
   font-weight: 600;
   margin-bottom: 2vw;
 }
@@ -102,42 +105,59 @@ input:focus{
   margin-bottom: 4vw;
 }
 
+
+.formulario input {
+  background-color: #282828;
+  border-color: #ffffff9c;
+  border-width: 0.1vw;
+  height: 3.5vw;
+  border-radius: 0.3vw;
+}
+
 .localizacao {
   margin-top: 3vw;
   margin-bottom: 2vw;
 }
 
-#numCasa {
-  margin-left: 20vw;
+.label-loc {
+  margin-bottom: 1vw;
 }
 
-.formulario input {
-  background-color: #282828;
-  border-color: #FFFFFF;
-  border-width: 0.1vw;
-  height: 3.5vw;
-  border-radius: 0.3vw;
+#numCasa {
+  margin-left: 32vw;
 }
 
 .localizacao input {
-  width: 20vw;
-}
-
-.botao button {
-  width: 20vw;
-  height: 3.5vw;
-  margin-top: 5vw;
-  margin-bottom: 3vw;
-  align-items: center;
-  border-radius: 0.3vw;
-  background-color: #282828;
-  border-color: #FFFFFF;
-  border-width: 0.1vw;
-  color: #FFFFFF;
+  width: 33vw;
+  margin-bottom: 1vw;
 }
 
 .botao {
   justify-content: center;
   display: flex;
   align-items: center;
+  margin-top: 5vw;
+  margin-bottom: 3vw;
+}
+
+.botao button {
+    padding: 1.5vw 6vw 1.5vw 6vw;
+    background-color: transparent;
+    text-decoration: none;
+    border-color: #FFFFFF;
+    border: 0.2vw solid;
+
+    /* fonte */
+    font-family: "Yantramanav", sans-serif;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 1.3vw;
+    transition: 0.8s;
+}
+
+
+
+.botao button:hover {
+  background-color: rgba(81, 81, 81, 50%);
+  border-color: rgba(255, 255, 255, 0.336);
 }
