@@ -21,6 +21,7 @@ input:focus{
 form label {
   font-size: 1.3vw;
 }
+
 .adicionarPedido {
   font-family: "Yantramanav", sans-serif;
   display: flex;
@@ -127,7 +128,7 @@ form label {
   margin-left: 32vw;
 }
 
-.localizacao input {
+.input-loc input {
   width: 33vw;
   margin-bottom: 1vw;
 }
@@ -154,8 +155,6 @@ form label {
     font-size: 1.3vw;
     transition: 0.8s;
 }
-
-
 
 .botao button:hover {
   background-color: rgba(81, 81, 81, 50%);

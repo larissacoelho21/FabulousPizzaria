@@ -57,16 +57,18 @@ app.post("/pedidos/adicionarpedidos", (req, res) => {
   const rua = req.body.rua;
   const bairro = req.body.bairro;
   const numerocasa = req.body.numerocasa;
+  const obs = req.body.obs;
 
   // Query SQL para cadastrar o pedido
-  const sql = `INSERT INTO Pedido (nomecliente, telefone, sabor, pagamento, rua, bairro, numerocasa) VALUES
-    ('${nomecliente}', '${telefone}', '${sabor}', '${pagamento}', '${rua}', '${bairro}', '${numerocasa}')`;
+  const sql = `INSERT INTO Pedido (nomecliente, telefone, sabor, pagamento, rua, bairro, numerocasa, obs) VALUES
+    ('${nomecliente}', '${telefone}', '${sabor}', '${pagamento}', '${rua}', '${bairro}', '${numerocasa}', '${obs}')`;
 
   conn.query(sql, function (err) {
     if (err) {
       console.log("Erro", err);
-      return res.status(500).send("Erro ao adicionar pedido");
+      res.status(500).send("erro ao adicionar pedido, por favor tente novamente!")
     }
+    
     res.redirect("/pedidos");
   });
 });

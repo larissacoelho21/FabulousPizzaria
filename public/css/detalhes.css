@@ -1,0 +1,35 @@
+.detalhesPedido {
+    font-family: "Yantramanav", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 5vw;
+    color: #FFFFFF;
+}
+
+input::placeholder {
+    color: #FFFFFF;
+}
+
+.botao a {
+    margin-top: -1vw;
+    padding: 1.5vw 6vw 1.5vw 6vw;
+    background-color: transparent;
+    text-decoration: none;
+    border-color: #FFFFFF;
+    border: 0.2vw solid;
+
+    /* fonte */
+    font-family: "Yantramanav", sans-serif;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 1.3vw;
+    transition: 0.8s;
+}
+
+.botao a:hover {
+    background-color: rgba(81, 81, 81, 50%);
+    border-color: rgba(255, 255, 255, 0.336);
+  }

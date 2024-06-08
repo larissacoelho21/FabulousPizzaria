@@ -1,27 +1,111 @@
-<h1>editar</h1>
+<div class="container">
+    <div class="titulo-menu" style="margin-top: 3vw;">
+        <img style="margin-right: 1.5vw;" class="starcolor-date" src="/img/icon/redStar.svg" alt="" />
+
+        <h1>Editar Pedidos</h1>
+
+        <img style="margin-left: 1.5vw;" class="starcolor-date" src="/img/icon/redStar.svg" alt="" />
+    </div>
+
+    <div class="parag">
+        <p>Modifique suas informações e mantenha o pedido correto!</p>
+    </div>
+
+    <div class="formulario">
+        <form action="/detalhes/update" method="post">
+            
+            <input type="hidden" name="PedidoId" value="{{ listaDetalhes.PedidoId }}">
+
+            <div class="partUm">
+                <div class="escolhaSabor">
+                    <label for="sabor"> Escolha o sabor: </label>
+                    <input type="text" name="sabor" id="sabor" list="sabores" value="{{ listaDetalhes.sabor }}">
+                    <datalist id="sabores">
+                        <option value="Margherita"></option>
+                        <option value="Capricciosa"></option>
+                        <option value="Diavola"></option>
+                        <option value="Quattro Formaggi"></option>
+                        <option value="Portuguesa"></option>
+                        <option value="Pepperoni"></option>
+                        <option value="Palmito"></option>
+                        <option value="Frango com catupiry"></option>
+                        <option value="Romeu e Julieta"></option>
+                        <option value="Sensação"></option>
+                        <option value="Banoffe"></option>
+                    </datalist>
+                </div>
+
+                <div class="clientName">
+                    <label for="client"> Nome completo:</label>
+                    <input type="text" id="client" name="nomecliente" autocomplete="off"
+                        value="{{ detalhes.nomecliente }}" />
+                </div>
+
+                <div class="telephone">
+                    <label for="tell"> Telefone/Celular:</label>
+                    <input name="tell" disabled placeholder="{{ detalhes.telefone }}" />
+                </div>
+            </div>
+
+            <div class="addressDelivery">
+
+                <p>Endereço:</p>
+
+                <label for="adress">Nome da rua:</label>
+                <input name="adress" disabled placeholder="{{ detalhes.rua }}" />
+
+                <div class="localizacao">
+
+                    <div class="label-loc" style="margin-bottom: -1vw;">
+
+                        <label for="bairro">Nome do bairro:</label>
+                        <label for="num" id="numCasa">Número da casa:</label>
+
+                    </div>
+
+                </div>
+
+                <div class="input-loc" style="margin-bottom: 1vw;">
+
+                    <input name="bairro" disabled placeholder="{{ detalhes.bairro }}" />
+                    <input name="num" style="margin-left: 7.5vw;" disabled placeholder="{{ detalhes.numerocasa }}" />
+
+                </div>
+
+            </div>
+
+            <div class="formPayment">
+                <label for="payment"> Forma de pagamento:</label>
+                <input name="payment" placeholder="{{ detalhes.pagamento }}" disabled />
+            </div>
+
+            <div class="observation">
+                <label for="obs">Observação:</label>
+                <input name="obs" disabled placeholder="{{ detalhes.obs }}" />
+            </div>
+
+            <div class="botao">
+                <a href="/detalhes/editar/{{ detalhes.PedidoId }}">EDITAR</a>
+            </div>
+        </form>
+
+    </div>
+
+    </section>
+</div>
+
+{{!-- <h1>editar</h1>
 
 <form action="/detalhes/update" method="post">
-    <input type="hidden" name="PedidoId" value="{{listaDetalhes.PedidoId}}">
+    
 
-        <label for="sabor">Sabor da pizza:</label>
-            <input style="background: #000;"
-                type="text" 
-                name="sabor" 
-                id="sabor" 
-                readonly
-                value="{{listaDetalhes.sabor}}"
-            >
+    <label for="sabor">Sabor da pizza:</label>
+    <input style="background: #000;" type="text" name="sabor" id="sabor" readonly value="{{listaDetalhes.sabor}}">
 
-        <label for="client">Nome completo:</label>
-            <input style="background: #000;"
-                type="text"
-                class="form-control"
-                id="cliente"
-                name="nomecliente"
-                value="{{listaDetalhes.nomecliente}}"
-                required
-            >
+    <label for="client">Nome completo:</label>
+    <input style="background: #000;" type="text" class="form-control" id="cliente" name="nomecliente"
+        value="{{listaDetalhes.nomecliente}}" required>
 
-        <button type="submit">enviar</button>
+    <button type="submit">enviar</button>
 
-</form>
+</form> --}}

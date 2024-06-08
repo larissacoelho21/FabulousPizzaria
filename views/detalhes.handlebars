@@ -1,15 +1,79 @@
-<h1>detalhesoioi</h1>
+<div class="container">
 
-<div class="card">
-    <h2>{{ detalhes.sabor }}</h2>
-    <h2>{{ detalhes.nomecliente }}</h2>
-    <h2>{{ detalhes.telefone }}</h2>
-    <h2>Endereço</h2>
-    <h2>{{ detalhes.rua }}</h2>
-    <h2>{{ detalhes.bairro }}</h2>
-    <h2>{{ detalhes.numerocasa }}</h2>
-    <h2>{{ detalhes.pagamento }}</h2>
-    <h2>{{ detalhes.obs }}</h2>
+    <section class="titulo-detalhes">
+        <div class="titulo-menu" style="margin-top: 5vw; !important">
+            <img style="margin-right: 1.5vw;" class="starcolor-date" src="/img/icon/redStar.svg" alt="" />
 
-    <a href="/detalhes/editar/{{ detalhes.PedidoId }}">Editar</a>
+            <h1>Detalhes Pedido</h1>
+
+            <img style="margin-left: 1.5vw;" class="starcolor-date" src="/img/icon/redStar.svg" alt="" />
+        </div>
+    </section>
+
+    <section class="detalhesPedido">
+
+        <div class="formulario">
+            <form method="get">
+                <div class="partUm">
+                    <div class="escolhaSabor">
+                        <label for="select"> Sabor escolhido:</label>
+                        <input placeholder=" {{ detalhes.sabor }}" disabled>
+                    </div>
+
+                    <div class="clientName">
+                        <label for="client"> Nome completo:</label>
+                        <input disabled placeholder="{{ detalhes.nomecliente }}" />
+                    </div>
+
+                    <div class="telephone">
+                        <label for="tell"> Telefone/Celular:</label>
+                        <input disabled placeholder="{{ detalhes.telefone }}" />
+                    </div>
+                </div>
+
+                <div class="addressDelivery">
+                    
+                    <p>Endereço:</p>
+
+                    <label for="adress">Nome da rua:</label>
+                    <input disabled placeholder="{{ detalhes.rua }}" />
+                    
+                    <div class="localizacao">
+
+                        <div class="label-loc" style="margin-bottom: -1vw;">
+
+                            <label for="adress">Nome do bairro:</label>
+                            <label for="adress" id="numCasa">Número da casa:</label>
+
+                        </div>
+
+                    </div>
+
+                    <div class="input-loc" style="margin-bottom: 1vw;">
+
+                        <input disabled placeholder="{{ detalhes.bairro }}" />
+                        <input style="margin-left: 7.5vw;" disabled placeholder="{{ detalhes.numerocasa }}"/>
+                    
+                    </div>
+                    
+                </div>
+
+                <div class="formPayment">
+                    <label for="payment"> Forma de pagamento:</label>
+                    <input placeholder="{{ detalhes.pagamento }}" disabled />
+                </div>
+
+                <div class="observation">
+                    <label for="obs">Observação:</label>
+                    <input disabled placeholder="{{ detalhes.obs }}" />
+                </div>
+
+                <div class="botao">
+                    <a href="/detalhes/editar/{{ detalhes.PedidoId }}">EDITAR</a>
+                </div>
+            </form>
+            
+        </div>
+
+    </section>
 </div>
