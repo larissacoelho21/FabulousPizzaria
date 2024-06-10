@@ -41,7 +41,7 @@
 
         <div class="telephone">
           <label for="tell"><span style="color: #CE2B37;  margin-right: 0.5vw;">*</span> Telefone/Celular:</label>
-          <input type="number" id="tell" name="telefone" required autocomplete="off" maxlength="11" minlength="11"
+          <input type="number" id="tell" name="telefone" required autocomplete="off" oninput="if(this.value.length > 11) this.value = this.value.slice(0, 11);"
             placeholder="(00) 0000-000" />
         </div>
       </div>
@@ -56,7 +56,7 @@
           <div class="label-loc">
 
             <label for="adress">Nome do bairro:</label>
-            <label for="adress" id="numCasa">Número da casa:</label>
+            <label for="adress" id="numCasa">Número da casa/ap:</label>
 
           </div>
 
@@ -64,7 +64,7 @@
             <input type="text" id="neighborhood" name="bairro" required autocomplete="off"
             placeholder="Informe o nome do seu bairro" />
           
-          <input style="margin-left: 7.5vw;" type="number" id="number" name="numerocasa" required autocomplete="off" placeholder="000"
+          <input style="margin-left: 7.5vw;" type="number" id="number" name="numerocasa" autocomplete="off" placeholder="000"
             oninput="if(this.value.length > 4) this.value = this.value.slice(0, 4);" />
           </div>
           

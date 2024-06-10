@@ -73,24 +73,6 @@ app.post("/pedidos/adicionarpedidos", (req, res) => {
   });
 });
 
-/* app.get("/pedidos/:id", (req, res) => {
-
-    const id = req.params.id;
-
-    const sql = `SELECT * FROM MenuPizzas WHERE PizzaID = ${id}`;
-
-    conn.query(sql, function (err, pizzas) {
-        if(err) {
-            console.error("Erro ao obter pizzas do banco de dados:", err);
-            res.status(500).send("Erro ao obter pizzas do banco de dados");
-            return;
-        }
-
-        const detalhes = data[0];
-        res.render('adicionarpedidos',  { pizzas: JSON.stringify(pizzas) })
-    })
-}) */
-
 app.get("/lista/:id", (req, res) => {
   const id = req.params.id;
   const sql = `SELECT * FROM Pedido WHERE PedidoId = ${id}`;

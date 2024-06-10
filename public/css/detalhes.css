@@ -1,35 +1,43 @@
 .detalhesPedido {
-    font-family: "Yantramanav", sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-top: 5vw;
-    color: #FFFFFF;
+  font-family: "Yantramanav", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 5vw;
+  color: #ffffff;
 }
 
 input::placeholder {
-    color: #FFFFFF;
+  color: #ffffff;
 }
 
 .botao a {
-    margin-top: -1vw;
-    padding: 1.5vw 6vw 1.5vw 6vw;
-    background-color: transparent;
-    text-decoration: none;
-    border-color: #FFFFFF;
-    border: 0.2vw solid;
+  margin-top: -1vw;
+  padding: 1.5vw 6vw 1.5vw 6vw;
+  background-color: transparent;
+  text-decoration: none;
+  border-color: #ffffff;
+  border: 0.2vw solid;
 
-    /* fonte */
-    font-family: "Yantramanav", sans-serif;
-    font-weight: bold;
-    color: #FFFFFF;
-    font-size: 1.3vw;
-    transition: 0.8s;
+  /* fonte */
+  font-family: "Yantramanav", sans-serif;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 1.3vw;
+  transition: 0.8s;
 }
 
 .botao a:hover {
-    background-color: rgba(81, 81, 81, 50%);
-    border-color: rgba(255, 255, 255, 0.336);
-  }
+  background-color: rgba(81, 81, 81, 50%);
+  border-color: rgba(255, 255, 255, 0.336);
+}
+
+
+/* editar */
+.parag{
+  font-family: "Yantramanav", sans-serif;
+  color: #ffffff;
+  text-align: center;
+}

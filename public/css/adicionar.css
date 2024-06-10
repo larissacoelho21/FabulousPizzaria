@@ -147,6 +147,7 @@ form label {
     text-decoration: none;
     border-color: #FFFFFF;
     border: 0.2vw solid;
+    cursor: pointer;
 
     /* fonte */
     font-family: "Yantramanav", sans-serif;
