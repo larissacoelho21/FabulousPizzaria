@@ -117,24 +117,21 @@ app.get("/detalhes/editar/:id", (req, res) => {
   });
 });
 
-// Definindo uma rota POST para "/detalhes/update"
 app.post("/detalhes/update", (req, res) => {
-  const id = req.body.PedidoId; // Obtendo o ID do pedido a partir do corpo da requisição
-  const nomecliente = req.body.nomecliente; // Obtendo o nome do cliente a partir do corpo da requisição
+  const id = req.body.PedidoId;
+  const nomecliente = req.body.nomecliente;
 
-  // Query SQL para atualizar o nome do cliente do pedido com o ID especificado
   const sql = `UPDATE Pedido SET
       nomecliente = '${nomecliente}'
       WHERE PedidoId = '${id}'`;
 
-  // Executando a query no banco de dados
   conn.query(sql, function (err) {
-    if (err) { // Verifica se houve algum erro na execução da query
-      console.log("erro", err); // Loga o erro no console se ocorrer
-      return; // Encerra a execução da função em caso de erro
+    if (err) {
+      console.log("erro", err);
+      return;
     }
 
-    res.redirect("/pedidos"); // Redireciona o cliente para a página de pedidos após o sucesso
+    res.redirect("/pedidos");
   });
 });
 
