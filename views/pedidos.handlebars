@@ -2,7 +2,7 @@
 
   <header>
 
-    <div class="cabecalho">{{! div header }}
+    <div class="header">{{! div header }}
 
       <div class="navbar">
         <ul>
@@ -10,7 +10,6 @@
           <li><a id="menu" href="/menu">MENU</a></li>
           <li><a id="pedidos" href="/pedidos">PEDIDOS</a></li>
         </ul>
-
       </div>
 
       <div class="name">
@@ -23,7 +22,8 @@
         <p>Finalize seu<span style="color: #CE2B37;"> pedido </span>
           em
           <span style="color: #009246;">poucos</span>
-          passos</p>
+          passos
+        </p>
 
       </div>
 
@@ -39,21 +39,11 @@
   <section class="pedidos">
 
     <div class="titulo-menu">
-      <img
-        style="margin-right: 1.5vw;"
-        class="starcolor-date"
-        src="/img/icon/redStar.svg"
-        alt=""
-      />
+      <img style="margin-right: 1.5vw;" class="starcolor-date" src="/img/icon/redStar.svg" alt="" />
 
       <h1>Meus Pedidos</h1>
 
-      <img
-        style="margin-left: 1.5vw;"
-        class="starcolor-date"
-        src="/img/icon/redStar.svg"
-        alt=""
-      />
+      <img style="margin-left: 1.5vw;" class="starcolor-date" src="/img/icon/redStar.svg" alt="" />
     </div>
 
     <div class="button">
@@ -62,33 +52,35 @@
   </section>
 
   <section class="pedidos-tabela">
-
-    <div class="up">
-      <ul class="title-tabela">
-        <li>Pedido</li>
-        <li>Sabor da Pizza</li>
-        <li style="margin-left: 28vw !important;">Informações</li>
-      </ul>
-    </div>
-
-    <div class="linha"><hr></div>
-    
     <div class="down">
-      {{#each lista}}
-        <ul class="info-tabela">
-          <li>{{this.PedidoId}}</li>
-          <li class="sabor">{{this.sabor}}</li>
-          <li class="button-pedidos">
-            <a  href="/lista/{{this.PedidoId}}"
-              > Detalhes</a>
-          </li>
-          <form class="remover" action="/pedidos/remove/{{this.PedidoId}}" method="post">
-            <input type="submit" value="Remover"/>
-          </form>
-        </ul>
-
-      {{/each}}
-
+      <table class="conteudo">
+        <thead>
+          <tr>
+            <th>Pedido ID</th>
+            <th>Sabor</th>
+            <th>Detalhes</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each lista}}
+          <tr>
+            <td>{{this.PedidoId}}</td>
+            <td class="sabor">{{this.sabor}}</td>
+            <td class="botoes">
+              <div class="button-pedidos">
+                <a href="/lista/{{this.PedidoId}}">Detalhes</a>
+              </div>
+              <div class="remove">
+                <form  action="/pedidos/remove/{{this.PedidoId}}" method="post">
+                  <input type="submit" value="Remover" />
+                </form>
+              </div>
+            </td>
+           
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
     </div>
 
   </section>
@@ -123,8 +115,12 @@
 
 </div>
 
+
 <script>
-  console.log() const path = window.location.pathname; if (path === '/pedidos')
-  { document.getElementById("pedidos").className = "active"; }
+    console.log()
+    const path = window.location.pathname;
+    if (path === '/pedidos') {
+        document.getElementById("pedidos").className = "active";
+    }
 
 </script>

@@ -1,12 +1,13 @@
-const express = require("express");
-const exphbs = require("express-handlebars");
-const mysql2 = require("mysql2");
+// Importando as bibliotecas necessárias
+const express = require("express"); // Importa o framework Express para criar e gerenciar um servidor web.
+const exphbs = require("express-handlebars"); // Importa o Express Handlebars, um mecanismo de visualização para renderizar páginas HTML.
+const mysql2 = require("mysql2"); // Importa o MySQL2, uma biblioteca para conectar e interagir com um banco de dados MySQL.
 
-// Express
-const app = express();
+// Criação de uma instância do Express
+const app = express(); // Cria uma aplicação Express, que será nosso servidor web.
 
-// CSS
-app.use(express.static("public"));
+// Configurando o middleware para servir arquivos estáticos
+app.use(express.static("public")); // Define o diretório "public" como o local para arquivos estáticos, como CSS, JavaScript e imagens.
 
 // Configuração do middleware para verificar solicitações com o tipo de conteúdo do corpo
 app.use(
@@ -32,18 +33,20 @@ app.get("/menu", (req, res) => {
   res.render("menu");
 });
 
+// Definindo uma rota GET para "/pedidos"
 app.get("/pedidos", (req, res) => {
-  const sql = "SELECT * FROM Pedido";
-  conn.query(sql, function (err, data) {
-    if (err) {
-      console.log(err);
-      return;
+  const sql = "SELECT * FROM Pedido"; // Consulta SQL para selecionar todos os registros da tabela "Pedido"
+  conn.query(sql, function (err, data) { // Executa a consulta no banco de dados
+    if (err) { // Verifica se houve algum erro na execução da consulta
+      console.log(err); // Se houver um erro, ele é registrado no console
+      return; // Encerra a execução da função em caso de erro
     }
 
-    const lista = data;
-    res.render("pedidos", { lista });
+    const lista = data; // Armazena o resultado da consulta em uma variável "lista"
+    res.render("pedidos", { lista }); // Renderiza a página "pedidos" usando o mecanismo de visualização, passando a "lista" como dados
   });
 });
+
 
 app.get("/adicionar", (req, res) => {
   res.render("adicionarPedido");
