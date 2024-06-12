@@ -47,12 +47,14 @@ app.get("/pedidos", (req, res) => {
   });
 });
 
-
+// Rota para a página de adicionar pedido
 app.get("/adicionar", (req, res) => {
   res.render("adicionarPedido");
 });
 
+// Definindo uma rota POST para "/pedidos/adicionarpedidos"
 app.post("/pedidos/adicionarpedidos", (req, res) => {
+  // Extraindo dados do corpo da requisição
   const nomecliente = req.body.nomecliente;
   const telefone = req.body.telefone;
   const sabor = req.body.sabor;
@@ -66,77 +68,91 @@ app.post("/pedidos/adicionarpedidos", (req, res) => {
   const sql = `INSERT INTO Pedido (nomecliente, telefone, sabor, pagamento, rua, bairro, numerocasa, obs) VALUES
     ('${nomecliente}', '${telefone}', '${sabor}', '${pagamento}', '${rua}', '${bairro}', '${numerocasa}', '${obs}')`;
 
+  // Executando a query no banco de dados
   conn.query(sql, function (err) {
     if (err) {
-      console.log("Erro", err);
-      res.status(500).send("erro ao adicionar pedido, por favor tente novamente!")
+      console.log("Erro", err); // Loga o erro no console se ocorrer
+      res.status(500).send("Erro ao adicionar pedido, por favor tente novamente!"); // Envia uma resposta de erro ao cliente
+      return; // Encerra a execução da função em caso de erro
     }
-    
-    res.redirect("/pedidos");
+
+    res.redirect("/pedidos"); // Redireciona o cliente para a página de pedidos após o sucesso
   });
 });
 
+
+// Definindo uma rota GET para "/lista/:id"
 app.get("/lista/:id", (req, res) => {
-  const id = req.params.id;
-  const sql = `SELECT * FROM Pedido WHERE PedidoId = ${id}`;
+  const id = req.params.id; // Obtendo o ID do pedido a partir dos parâmetros da URL
+  const sql = `SELECT * FROM Pedido WHERE PedidoId = ${id}`; // Query SQL para selecionar o pedido com o ID especificado
 
-  conn.query(sql, function (err, data) {
-    if (err) {
-      console.log(err);
+  conn.query(sql, function (err, data) { // Executando a query no banco de dados
+    if (err) { // Verifica se houve algum erro na execução da query
+      console.log(err); // Loga o erro no console se ocorrer
+      res.status(500).send("Erro ao buscar detalhes do pedido, por favor tente novamente!"); // Envia uma resposta de erro ao cliente
+      return; // Encerra a execução da função em caso de erro
     }
 
-    const detalhes = data[0];
+    const detalhes = data[0]; // Armazena o primeiro (e único) resultado da query na variável "detalhes"
 
-    res.render("detalhes", { detalhes });
+    res.render("detalhes", { detalhes }); // Renderiza a página "detalhes" passando os detalhes do pedido
   });
 });
 
+
+// Definindo uma rota GET para "/detalhes/editar/:id"
 app.get("/detalhes/editar/:id", (req, res) => {
-  const id = req.params.id;
-  const sql = `SELECT * FROM Pedido WHERE PedidoId = ${id}`;
+  const id = req.params.id; // Obtendo o ID do pedido a partir dos parâmetros da URL
+  const sql = `SELECT * FROM Pedido WHERE PedidoId = ${id}`; // Query SQL para selecionar o pedido com o ID especificado
 
-  conn.query(sql, function (err, data) {
-    if (err) {
-      console.log(err);
-      return;
+  conn.query(sql, function (err, data) { // Executando a query no banco de dados
+    if (err) { // Verifica se houve algum erro na execução da query
+      console.log(err); // Loga o erro no console se ocorrer
+      return; // Encerra a execução da função em caso de erro
     }
 
-    const listaDetalhes = data[0];
+    const listaDetalhes = data[0]; // Armazena o primeiro (e único) resultado da query na variável "listaDetalhes"
 
-    res.render("editar", { listaDetalhes }); // Passar os detalhes do pedido para o template "editar"
+    res.render("editar", { listaDetalhes }); // Renderiza a página "editar" passando os detalhes do pedido
   });
 });
 
+// Definindo uma rota POST para "/detalhes/update"
 app.post("/detalhes/update", (req, res) => {
-  const id = req.body.PedidoId;
-  const nomecliente = req.body.nomecliente;
+  const id = req.body.PedidoId; // Obtendo o ID do pedido a partir do corpo da requisição
+  const nomecliente = req.body.nomecliente; // Obtendo o nome do cliente a partir do corpo da requisição
 
+  // Query SQL para atualizar o nome do cliente do pedido com o ID especificado
   const sql = `UPDATE Pedido SET
       nomecliente = '${nomecliente}'
       WHERE PedidoId = '${id}'`;
 
+  // Executando a query no banco de dados
   conn.query(sql, function (err) {
-    if (err) {
-      console.log("erro", err);
-      return;
+    if (err) { // Verifica se houve algum erro na execução da query
+      console.log("erro", err); // Loga o erro no console se ocorrer
+      return; // Encerra a execução da função em caso de erro
     }
 
-    res.redirect("/pedidos");
+    res.redirect("/pedidos"); // Redireciona o cliente para a página de pedidos após o sucesso
   });
 });
 
+// Definindo uma rota POST para "/pedidos/remove/:id"
 app.post("/pedidos/remove/:id", (req, res) => {
-  const id = req.params.id;
-  const sql = `DELETE FROM Pedido WHERE PedidoId = ${id}`;
+  const id = req.params.id; // Obtendo o ID do pedido a partir dos parâmetros da URL
+  const sql = `DELETE FROM Pedido WHERE PedidoId = ${id}`; // Query SQL para deletar o pedido com o ID especificado
 
+  // Executando a query no banco de dados
   conn.query(sql, function (err, data) {
-    if (err) {
-      console.log(err);
+    if (err) { // Verifica se houve algum erro na execução da query
+      console.log(err); // Loga o erro no console se ocorrer
     }
 
-    res.redirect("/pedidos");
+    res.redirect("/pedidos"); // Redireciona o cliente para a página de pedidos após o sucesso ou falha na remoção
   });
 });
+
 
 // Conexão com banco de dados
 const conn = mysql2.createConnection({
