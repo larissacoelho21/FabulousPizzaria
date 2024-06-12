@@ -63,28 +63,33 @@
 
   <section class="pedidos-tabela">
 
-    <tr class="title-tabela">
-      <li>Pedido</li>
-      <li>Sabor da Pizza</li>
-      <li>Informações</li>
-    </tr>
+    <div class="up">
+      <ul class="title-tabela">
+        <li>Pedido</li>
+        <li>Sabor da Pizza</li>
+        <li style="margin-left: 28vw !important;">Informações</li>
+      </ul>
+    </div>
 
-    {{#each lista}}
-      <tr class="info-tabela">
-        <td>{{this.PedidoId}}</td>
-        <td>{{this.sabor}}</td>
-        <td>{{this.nomecliente}}</td>
-        <td class="button">
-          <a style="padding: 1vw 4vw 1vw ; !important"
-            href="/lista/{{this.PedidoId}}"
-            > Detalhes</a>
-        </td>
-        <form action="/pedidos/remove/{{this.PedidoId}}" method="post">
-          <input type="submit" value="Remover"/>
-        </form>
-      </tr>
+    <div class="linha"><hr></div>
+    
+    <div class="down">
+      {{#each lista}}
+        <ul class="info-tabela">
+          <li>{{this.PedidoId}}</li>
+          <li class="sabor">{{this.sabor}}</li>
+          <li class="button-pedidos">
+            <a  href="/lista/{{this.PedidoId}}"
+              > Detalhes</a>
+          </li>
+          <form class="remover" action="/pedidos/remove/{{this.PedidoId}}" method="post">
+            <input type="submit" value="Remover"/>
+          </form>
+        </ul>
 
-    {{/each}}
+      {{/each}}
+
+    </div>
 
   </section>
 

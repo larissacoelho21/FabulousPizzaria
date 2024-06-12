@@ -6,3 +6,105 @@
     height: 45.5vw;
 }
 
+.pedidos-tabela {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8vw;
+
+    /* fontes */
+    font-family: "Yantramanav", sans-serif;
+    font-size: 1.8vw;
+    color: #FFFFFF;
+    font-weight: 400;
+}
+
+.up  {
+    margin-left: 5vw;
+    margin-bottom: 2vw;
+}
+
+.title-tabela {
+    margin-left: 2vw;
+    display: flex;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.title-tabela li:not(:first-child) {
+    margin-left: 15vw;
+}
+
+.linha hr {
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    width: 85vw;
+    padding: 0;
+    margin: auto;
+}
+
+.down {
+    margin-left: 5vw;
+    margin-bottom: 3vw;
+}
+
+.info-tabela {
+    display: flex;
+    margin-left: 2vw;
+    margin-top: 2vw;
+    justify-content: start;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.sabor {
+    margin-left: 19vw;
+}
+
+.button-pedidos {
+    position: relative;
+    cursor: pointer;
+}
+
+.button-pedidos a{
+    padding: 1vw 2vw 1vw 2vw;
+    margin-right: 4vw;
+    margin-left: auto;
+    background-color: transparent;
+    text-decoration: none;
+    border-color: #FFFFFF;
+    border: 0.2vw solid;
+    text-align: center;
+    
+
+    /* fonte */
+    font-size: 1.5vw;
+
+    transition: 0.8s;
+}
+
+.button-pedidos a:hover{
+    background-color: rgba(81, 81, 81, 50%);
+    border-color: rgba(255, 255, 255, 0.336);
+}
+
+.remover input {
+    padding: 1.2vw 2vw 1.2vw 2vw;
+    margin-top: -0.8vw;
+    background-color: transparent;
+    text-decoration: none;
+    border-color: #FFFFFF;
+    border: 0.2vw solid;
+    
+
+    /* fonte */
+    font-size: 1.3vw;
+    font-weight: 600;
+
+    transition: 0.8s;
+}
+
+.remover input:hover {
+    background-color: rgba(81, 81, 81, 50%);
+    border-color: rgba(255, 255, 255, 0.336);
+}
