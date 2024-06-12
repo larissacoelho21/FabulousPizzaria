@@ -120,9 +120,19 @@ app.get("/detalhes/editar/:id", (req, res) => {
 app.post("/detalhes/update", (req, res) => {
   const id = req.body.PedidoId;
   const nomecliente = req.body.nomecliente;
+  const telefone = req.body.telefone;
+  const rua = req.body.rua;
+  const bairro = req.body.bairro;
+  const numerocasa = req.body.numerocasa;
+  const obs = req.body.obs;
 
   const sql = `UPDATE Pedido SET
-      nomecliente = '${nomecliente}'
+      nomecliente = '${nomecliente}',
+      telefone = '${telefone}',
+      rua = '${rua}',
+      bairro = '${bairro}',
+      numerocasa = '${numerocasa}',
+      obs = '${obs}'      
       WHERE PedidoId = '${id}'`;
 
   conn.query(sql, function (err) {

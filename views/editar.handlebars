@@ -49,7 +49,7 @@
                     <div class="addressDelivery">
                         <p>Endereço:</p>
                         <label for="adress">Nome da rua:</label>
-                        <input name="adress" placeholder="{{ listaDetalhes.rua }}" />
+                        <input name="rua" placeholder="{{ listaDetalhes.rua }}" autocomplete="off"/>
 
                         <div class="localizacao">
                             <div class="label-loc" style="margin-bottom: -1vw;">
@@ -59,19 +59,19 @@
                         </div>
 
                         <div class="input-loc" style="margin-bottom: 1vw;">
-                            <input name="bairro" placeholder="{{ listaDetalhes.bairro }}" />
-                            <input name="num" style="margin-left: 7.5vw;" placeholder="{{ listaDetalhes.numerocasa }}" oninput="if(this.value.length > 4) this.value = this.value.slice(0, 4);" />
+                            <input name="bairro" placeholder="{{ listaDetalhes.bairro }}" autocomplete="off"/>
+                            <input name="numerocasa" style="margin-left: 7.5vw;" placeholder="{{ listaDetalhes.numerocasa }}" oninput="if(this.value.length > 4) this.value = this.value.slice(0, 4);" autocomplete="off"/>
                         </div>
                     </div>
 
                     <div class="formPayment">
                         <label for="payment"> Forma de pagamento:</label>
-                        <input name="payment" placeholder="{{ listaDetalhes.pagamento }}" disabled />
+                        <input name="pagamento" placeholder="{{ listaDetalhes.pagamento }}" disabled/>
                     </div>
 
                     <div class="observation">
                         <label for="obs">Observação:</label>
-                        <input name="obs" placeholder="{{ listaDetalhes.obs }}" />
+                        <input name="obs" placeholder="{{ listaDetalhes.obs }}" autocomplete="off"/>
                     </div>
 
                     <div class="botao">
